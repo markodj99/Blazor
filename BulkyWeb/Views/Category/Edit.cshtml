@@ -1,10 +1,11 @@
 ﻿@model Category
 
 <form method="post">
+@*    <input asp-for="Id" hidden/>*@
     <div class="border p-4 mt-4">
         <div class="row pb-2">
             <h2 class="text-primary">
-                Create category
+                Edit Category
             </h2>
             <hr/>
         </div>
@@ -22,7 +23,7 @@
         <div class="row">
             <div class="col-6 col-md-3">
                 <button type="submit" class="btn btn-primary form-control">
-                    Create
+                    Update
                 </button>
             </div>
             <div class="col-6 col-md-3">
@@ -36,6 +37,6 @@
 
 @section Scripts{
     @{
-        <partial name="_ValidationScriptsPartial"/>
+        <partial name="_ValidationScriptsPartial" />
     }
 }
