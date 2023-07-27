@@ -1,7 +1,6 @@
 ﻿@page
 @model BulkyRazor.Pages.Categories.EditModel
 
-
 <form method="post">
     <input asp-for="Category.Id" hidden />
     <div class="border p-3 mt-4">
@@ -20,7 +19,6 @@
             <input asp-for="Category.DisplayOrder" class="form-control" />
             <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
         </div>
-
         <div class="row">
             <div class="col-6 col-md-3">
                 <button type="submit" class="btn btn-primary form-control" >Update</button>
