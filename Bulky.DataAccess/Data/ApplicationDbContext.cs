@@ -15,6 +15,7 @@ namespace Bulky.DataAccess.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Company> Companies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -85,17 +86,17 @@ namespace Bulky.DataAccess.Data
                 },
                 new Product
                 {
-                Id = 5,
-                Title = "Rock in the Ocean",
-                Author = "Ron Parker",
-                Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                ISBN = "SOTJ1111111101",
-                ListPrice = 30,
-                Price = 27,
-                Price50 = 25,
-                Price100 = 20,
-                CategoryId = 3,
-                ImageUrl = ""
+                    Id = 5,
+                    Title = "Rock in the Ocean",
+                    Author = "Ron Parker",
+                    Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
+                    ISBN = "SOTJ1111111101",
+                    ListPrice = 30,
+                    Price = 27,
+                    Price50 = 25,
+                    Price100 = 20,
+                    CategoryId = 3,
+                    ImageUrl = ""
                 },
                 new Product
                 {
@@ -110,6 +111,39 @@ namespace Bulky.DataAccess.Data
                     Price100 = 20,
                     CategoryId = 3,
                     ImageUrl = ""
+                }
+            );
+
+            modelBuilder.Entity<Company>().HasData(
+                new Company()
+                {
+                    Id = 1,
+                    Name = "Vivid Books",
+                    StreetAddress = "999 Vid St",
+                    City = "Borac",
+                    PostalCode = "55555",
+                    State = "SRB",
+                    PhoneNumber = "123897653498"
+                },
+                new Company()
+                {
+                    Id = 2,
+                    Name = "Vivid Smth",
+                    StreetAddress = "249 Vid St",
+                    City = "Svilajnac",
+                    PostalCode = "das",
+                    State = "SRB",
+                    PhoneNumber = "123312"
+                },
+                new Company()
+                {
+                    Id = 3,
+                    Name = "Vivid NMP",
+                    StreetAddress = "435 Vid St",
+                    City = "Cacak",
+                    PostalCode = "4312",
+                    State = "SRB",
+                    PhoneNumber = "3123123123"
                 }
             );
         }
