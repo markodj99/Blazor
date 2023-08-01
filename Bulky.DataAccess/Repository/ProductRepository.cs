@@ -15,26 +15,27 @@ namespace Bulky.DataAccess.Repository
 
         public ProductRepository(ApplicationDbContext db) : base(db) => _db = db;
 
-        public void Update(Product p) => _db.Products.Update(p);
-        //{
-        //    _db.Products.Update(p);
-        //    var objFromDb = _db.Products.FirstOrDefault(u => u.Id == p.Id);
-        //    if (objFromDb != null)
-        //    {
-        //        objFromDb.Title = p.Title;
-        //        objFromDb.ISBN = p.ISBN;
-        //        objFromDb.Price = p.Price;
-        //        objFromDb.Price50 = p.Price50;
-        //        objFromDb.ListPrice = p.ListPrice;
-        //        objFromDb.Price100 = p.Price100;
-        //        objFromDb.Description = p.Description;
-        //        objFromDb.CategoryId = p.CategoryId;
-        //        objFromDb.Author = p.Author;
-        //        if (p.ImageUrl != null)
-        //        {
-        //            objFromDb.ImageUrl = p.ImageUrl;
-        //        }
-        //    }
-        //}
+        public void Update(Product p)
+        {
+            _db.Products.Update(p);
+            var objFromDb = _db.Products.FirstOrDefault(u => u.Id == p.Id);
+            if (objFromDb != null)
+            {
+                objFromDb.Title = p.Title;
+                objFromDb.ISBN = p.ISBN;
+                objFromDb.Price = p.Price;
+                objFromDb.Price50 = p.Price50;
+                objFromDb.ListPrice = p.ListPrice;
+                objFromDb.Price100 = p.Price100;
+                objFromDb.Description = p.Description;
+                objFromDb.CategoryId = p.CategoryId;
+                objFromDb.Author = p.Author;
+                objFromDb.ProductImages = p.ProductImages;
+                //if (p.ImageUrl != null)
+                //{
+                //    objFromDb.ImageUrl = p.ImageUrl;
+                //}
+            }
+        }
     }
 }
